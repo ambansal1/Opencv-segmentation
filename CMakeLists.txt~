@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project( DisplayImage )
+find_package( OpenCV REQUIRED )
+set(INCLUDE_DIR /home/amit/Desktop/DisplayImage/Include)
+include_directories( ${OpenCV_INCLUDE_DIRS} ${INCLUDE_DIR} )
+set(HEADER_FILES ${INCLUDE_DIR}/ObstacleDetection.h )
+add_executable( DisplayImage DisplayImage.cpp ${HEADER_FILES} )
+target_link_libraries( DisplayImage ${OpenCV_LIBS} ${HEADER_FILES})

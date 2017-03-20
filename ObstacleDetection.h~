@@ -1,0 +1,29 @@
+#ifndef		OBSTACLE_DETECTION_H
+#define		OBSTACLE_DETECTION_H
+
+
+
+#include <opencv2/highgui/highgui.hpp>
+
+#include <opencv2/imgproc/imgproc_c.hpp>
+#include <opencv2/photo/photo_c.hpp>
+#include <opencv2/video/tracking_c.hpp>
+#include <opencv2/objdetect/objdetect_c.hpp>
+#include <stdio.h>
+
+
+
+
+
+void	initGlobals();
+void	skySegment(IplImage *frame);
+bool	selectHorizonLineByCost(IplImage* img, CvPoint p1, CvPoint p2);
+CvPoint	findHorizon(IplImage *img);
+void	avoidDirection(IplImage *img, CvPoint delta);
+void	cleanUp();
+
+
+extern bool  output;
+extern bool  flag;
+
+#endif
